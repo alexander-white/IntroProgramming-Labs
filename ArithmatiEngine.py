@@ -13,36 +13,44 @@ def showIntro():
 def showOutro():
     print("\nThank you for using the Arithmetic Engine…")
     print("\nPlease come back again soon!")
+
+def numbers():
+    while True:
+        try:
+            num1 = int(input("Enter the first  number: "))
+            num2 = int(input("Enter the second number: "))
+            if type(num1) == int and type(num2) == int:
+                break
+        except:
+            print("unfortunatly you have to enter numbers")
+            continue
     
 def doLoop():
     while True:
         cmd = input("What computation do you want to perform? ")
         cmd = cmd.lower()
         if cmd == "add":
-            num1 = int(input("Enter the first  number: "))
-            num2 = int(input("Enter the second number: "))
+            numbers()
             result = num1 + num2
         elif cmd == "sub":
-            num1 = int(input("Enter the first  number: "))
-            num2 = int(input("Enter the second number: "))
+            numbers()
             result = num1 - num2
         elif cmd == "mult":
-            num1 = int(input("Enter the first  number: "))
-            num2 = int(input("Enter the second number: "))
+            numbers()
             result = num1 * num2
         elif cmd == "div":
-            num1 = int(input("Enter the first  number: "))
-            num2 = int(input("Enter the second number: "))
+            numbers()
             result = num1 // num2
+            numbers()
         elif cmd == "pow":
-            num1 = int(input("Enter the first  number: "))
-            num2 = int(input("Enter the second number: "))
+            numbers()
             result = num1 ** num2
         elif cmd == "quit":
             break
         else:
             print(cmd+" is not a valid command.")
             print("try a valid command, the valid commands are "+str(cmds)+"\n")
+            continue
         print("The result is " + str(result) + ".\n")
             
 def main():
